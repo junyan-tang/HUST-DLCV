@@ -20,7 +20,6 @@ def backward(self, x, y):
     dw1 = np.dot(x.T, delta2)
     db1 = np.sum(delta2, axis=0)
 
-
 # calculate the accuracy of the prediction
 def accuracy(self, x, y_input):
     y_pred = np.floor(self.predict(x) * 1.9999)
