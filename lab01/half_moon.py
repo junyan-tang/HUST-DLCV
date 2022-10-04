@@ -24,42 +24,27 @@ X, y = make_moons(n_samples, noise=0.1, shuffle=True)
 train_X, train_y = np.array(X[:train_num]), np.array(y[:train_num])
 test_X, test_y = np.array(X[train_num:]), np.array(y[train_num:])
 
-
 # define some activation functions
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
-
-
 def ReLU(x):
     return np.maximum(0, x)
-
-
 def TanH(x):
     return (1 - np.exp(-2 * x)) / (1 + np.exp(-2 * x))
-
-
 def LeakyReLU(x):
     return np.maximum(0.1 * x, x)
-
 
 # define some backward dx functions
 def sig_back(x):
     value = sigmoid(x)
     return (1.0 - value) * value
-
-
 def TanH_back(x):
     value = TanH(x)
     return 1 - np.power(value, 2)
-
-
 def ReLU_back(x):
     return np.where(x < 0, 0, 1)
-
-
 def Leaky_back(x):
     return np.where(x < 0, 0.1, 1)
-
 
 # define the neural network
 class BP_NN:
