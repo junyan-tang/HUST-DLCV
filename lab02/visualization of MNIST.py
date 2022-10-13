@@ -7,11 +7,9 @@ dataset = datasets.MNIST("mnist", train=True,
                          download=True)
 dataloader = DataLoader(dataset=dataset, batch_size=32, shuffle=True)
 
-
 def img_show(image):
     plt.imshow(image, cmap="gray")
     plt.show()
-
 
 # show one picture
 img, lb = dataset[0]
