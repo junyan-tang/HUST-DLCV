@@ -4,3 +4,6 @@ This is a simple toy dataset to visualize clustering and classification algorith
 
 ## 2. MNIST-GAN
 Use Pytorch to build and train the MNIST-GAN network. This trained network can generate new handwritten digital pictures from 0 to 9. We tried to find out a generated picture which is closest to pictures in the training set. We also figured out how these digits were obtained by linearly interpolating between coordinates in z space of the full model.
+
+## 3. MNIST-ViT
+Using Pytorch to design and build Vision Transformer, realizing the handwritten number recognition task of MNIST dataset. Analyze the function and working mechanism of each module in Vision Transformer like patch size and embedding dimension.
