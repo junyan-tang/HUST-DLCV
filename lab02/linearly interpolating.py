@@ -5,4 +5,4 @@ for i in range(latent_dim):
 
 b = a.t()
 gen_images = generator(b)
-torchvision.utils.save_image(gen_images.data[:], "images_trans.png", normalize=True)
+torchvision.utils.save_image(gen_images.data[:], "images_trans.png", normalize=True, nrow=10)
