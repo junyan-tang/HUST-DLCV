@@ -8,7 +8,6 @@ image_size = [1, 28, 28]
 latent_dim = 96
 batch_size = 64
 
-
 class Generator(nn.Module):
     def __init__(self):
         super(Generator, self).__init__()
@@ -56,7 +55,6 @@ class Generator(nn.Module):
         # output = self.model(out)
         # image = output.reshape(z.shape[0], *image_size)
         return image
-
 
 class Discriminator(nn.Module):
     def __init__(self):
@@ -146,13 +144,3 @@ for epoch in range(num_epoch):
         if i % 800 == 0:
             image = generate_images[:16].data
             torchvision.utils.save_image(image, f"image_{len(dataloader)*epoch+i}.png", nrow=4)
-
-
-z = torch.rand(2, latent_dim)
-a = torch.FloatTensor(latent_dim, 10)
-for i in range(latent_dim):
-    a[i] = torch.linspace(z[0][i], z[1][i], 10)
-
-b = a.t()
-gen_images = generator(b)
-torchvision.utils.save_image(gen_images.data[:], "images_trans.png", normalize=True, nrow=10)
